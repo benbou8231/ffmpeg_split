@@ -52,7 +52,7 @@ def parseChapters(filename):
       m = None
 
     if m != None:
-      chapters.append({ "name": str(num) + " - " + title, "start": m.group(2), "end": m.group(3)})
+      chapters.append({ "name": str(f"{num:0>2}") + " - " + title, "start": m.group(2), "end": m.group(3)})
       num += 1
 
   return chapters
