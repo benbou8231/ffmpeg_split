@@ -52,6 +52,7 @@ def parseChapters(filename):
       m = None
 
     if m != None:
+      title = title.encode('latin1').decode('utf-8')
       chapters.append({ "name": str(f"{num:0>2}") + " - " + title, "start": m.group(2), "end": m.group(3)})
       num += 1
 
@@ -76,7 +77,7 @@ def getChapters():
     chap['name'] = chap['name'].replace('/',':')
     chap['name'] = chap['name'].replace("'","\'")
     print("start:" +  chap['start'])
-    chap['outfile'] = path + "/" + newdir + "/" + re.sub("[^-a-zA-Z0-9_.():' ]+", '', chap['name']) + fext
+    chap['outfile'] = path + "/" + newdir + "/" + re.sub("[^-a-zA-Z0-9_.():' çéâêîôûàëïü]+", '', chap['name']) + fext
     chap['origfile'] = options.infile
     print(chap['outfile'])
   return chapters, options.encode
