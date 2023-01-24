@@ -74,7 +74,7 @@ def getChapters():
   os.mkdir(path + "/" + newdir)
 
   for chap in chapters:
-    chap['name'] = chap['name'].replace('/',':')
+    chap['name'] = chap['name'].replace('/','de')
     chap['name'] = chap['name'].replace("'","\'")
     print("start:" +  chap['start'])
     chap['outfile'] = path + "/" + newdir + "/" + re.sub("[^-a-zA-Z0-9_.():' çéâêîôûàëïü]+", '', chap['name']) + fext
